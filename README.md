@@ -26,30 +26,37 @@ Load balancing ensures that the application will be highly redundant, in additio
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_It allows connectivity into the vitual network from external sources and hides internal machines by allowing connectivity via private addresses.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the container and system logs.
-- _TODO: What does Filebeat watch for? Watches system logs.
-- _TODO: What does Metricbeat record?_
+-What does Filebeat watch for? Watches system logs.
+-What does Metricbeat record?_  It watches the ELK logs.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+Name	    Function	          ip address	OS
+elk	      log aggregator	    10.1.1.2	ubuntu 18.04
+dvwa1	    virtual machine	    10.0.1.2	ubuntu 18.04
+dvwa2	    virtual machine	    10.0.1.3	ubuntu 18.04
+dvwa3	    virtual machine	    10.0.1.4	ubuntu 18.04
+jumpbox	  entry point gateway	10.0.1.5	ubuntu 18.04
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
 
 Machines within the network can only be accessed by _____.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
+Name	  Publicly Accessible	  Allowed ip addresses
+elk	    yes via port 9200	    From DVWA machines
+dvwa1	  no	                  n/a
+dvwa2	  no	                  n/a
+dvwa3	  no	                  n/a
+jumpbox	yes via ssh	          From home private IP
+
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
