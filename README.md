@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  -
 
 This document contains the following details:
 - Description of the Topologu
@@ -22,11 +22,11 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly redundant, in addition to restricting unathorized accessing to the network.
+- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_It allows connectivity into the vitual network from external sources and hides internal machines by allowing connectivity via private addresses.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the container and system logs.
+- _TODO: What does Filebeat watch for? Watches system logs.
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
