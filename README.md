@@ -23,7 +23,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly redundant, in addition to restricting unathorized accessing to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_It allows connectivity into the vitual network from external sources and hides internal machines by allowing connectivity via private addresses.
+-What aspect of security do load balancers protect? What is the advantage of a jump box?_It allows connectivity into the vitual network from external sources and hides internal machines by allowing connectivity via private addresses.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the container and system logs.
 -What does Filebeat watch for? Watches system logs.
@@ -44,12 +44,13 @@ jumpbox	  entry point gateway	10.0.1.5	ubuntu 18.04
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+- _Add whitelisted IP addresses (please see below chart)
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by (please see below chart)
+-Which machine did you allow to access your ELK VM? What was its IP address? (please see below chart)
 
 A summary of the access policies in place can be found in the table below.
+
 Name	  Publicly Accessible	  Allowed ip addresses
 elk	    yes via port 9200	    From DVWA machines
 dvwa1	  no	                  n/a
@@ -58,21 +59,22 @@ dvwa3	  no	                  n/a
 jumpbox	yes via ssh	          From home private IP
 
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
-
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- What is the main advantage of automating configuration with Ansible? It reduces the human error especially at scale and makes the job essier and faster. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+-In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
+
+- ssh to jumpbox
+- install docker.io
+- pull Ansible container
+- build and run ELK playbook
+- configure security rules to allow inbound ports 9200,5601 Collapse
+
+-
+- 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
